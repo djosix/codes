@@ -13,6 +13,6 @@ with open('.playlist.html', 'w') as f:
         hidden="false"
         autostart="true">
     </embed>
-    '''
+    ''')
 
 
