@@ -1,0 +1,9 @@
+cache
+*.pkl
+*.np
+logs
+result
+*.pyc
+.vscode
+*.swp
+.DS_Store

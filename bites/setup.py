@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="bites",
-    version="0.0.9",
+    version="0.0.10",
     author="djosix",
     author_email="toregenerate@gmail.com",
     description="Operating bytes made easy",
