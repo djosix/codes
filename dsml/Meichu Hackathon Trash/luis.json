@@ -1,0 +1,481 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "發票廣告推薦",
+  "desc": "發票資訊應用於廣告推薦",
+  "culture": "zh-cn",
+  "intents": [
+    {
+      "name": "None"
+    },
+    {
+      "name": "商品"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "brand",
+      "subLists": [
+        {
+          "canonicalForm": "義美",
+          "list": []
+        },
+        {
+          "canonicalForm": "黑松",
+          "list": []
+        },
+        {
+          "canonicalForm": "可爾必思",
+          "list": []
+        },
+        {
+          "canonicalForm": "Tiffany&Co",
+          "list": []
+        },
+        {
+          "canonicalForm": "茶裏王",
+          "list": []
+        },
+        {
+          "canonicalForm": "統一",
+          "list": []
+        },
+        {
+          "canonicalForm": "悅氏",
+          "list": []
+        },
+        {
+          "canonicalForm": "每朝健康",
+          "list": []
+        },
+        {
+          "canonicalForm": "舒潔",
+          "list": []
+        },
+        {
+          "canonicalForm": "百威",
+          "list": []
+        },
+        {
+          "canonicalForm": "ＡＢ",
+          "list": []
+        },
+        {
+          "canonicalForm": "味丹",
+          "list": []
+        },
+        {
+          "canonicalForm": "立頓",
+          "list": []
+        },
+        {
+          "canonicalForm": "潘朵拉",
+          "list": []
+        },
+        {
+          "canonicalForm": "長壽",
+          "list": []
+        },
+        {
+          "canonicalForm": "可果美",
+          "list": []
+        },
+        {
+          "canonicalForm": "屈塵氏",
+          "list": []
+        }
+      ]
+    },
+    {
+      "name": "daily needs",
+      "subLists": [
+        {
+          "canonicalForm": "書",
+          "list": [
+            "雜誌",
+            "誌",
+            "小說",
+            "漫畫",
+            "報"
+          ]
+        },
+        {
+          "canonicalForm": "衣服",
+          "list": [
+            "襯衫",
+            "洋裝",
+            "褲",
+            "裙"
+          ]
+        },
+        {
+          "canonicalForm": "汽油",
+          "list": [
+            "柴油",
+            "無鉛"
+          ]
+        },
+        {
+          "canonicalForm": "文具",
+          "list": [
+            "鉛筆",
+            "橡皮擦",
+            "螢光筆",
+            "尺"
+          ]
+        },
+        {
+          "canonicalForm": "衛生紙",
+          "list": [
+            "抽取式"
+          ]
+        },
+        {
+          "canonicalForm": "育兒產品",
+          "list": [
+            "尿布",
+            "奶嘴",
+            "嬰兒車"
+          ]
+        },
+        {
+          "canonicalForm": "菸",
+          "list": [
+            "香菸",
+            "雪茄",
+            "七星"
+          ]
+        },
+        {
+          "canonicalForm": "暖暖包",
+          "list": []
+        },
+        {
+          "canonicalForm": "衛生棉",
+          "list": [
+            "棉條"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "drinks",
+      "subLists": [
+        {
+          "canonicalForm": "茶",
+          "list": [
+            "奶茶",
+            "青茶",
+            "紅茶拿鐵",
+            "鐵觀音",
+            "鐵觀音拿鐵",
+            "烏龍",
+            "綠茶",
+            "檸檬茶",
+            "麥茶",
+            "抹茶",
+            "8冰綠"
+          ]
+        },
+        {
+          "canonicalForm": "豆漿",
+          "list": [
+            "豆奶",
+            "豆乳"
+          ]
+        },
+        {
+          "canonicalForm": "咖啡",
+          "list": [
+            "拿鐵",
+            "義式咖啡",
+            "美式咖啡"
+          ]
+        },
+        {
+          "canonicalForm": "酒",
+          "list": [
+            "啤酒",
+            "蘋果酒",
+            "藥酒"
+          ]
+        },
+        {
+          "canonicalForm": "水",
+          "list": [
+            "礦泉水",
+            "飲用水",
+            "天然水"
+          ]
+        },
+        {
+          "canonicalForm": "牛奶",
+          "list": [
+            "牛乳",
+            "鮮乳"
+          ]
+        },
+        {
+          "canonicalForm": "果汁",
+          "list": [
+            "蘋果汁",
+            "柳橙汁",
+            "葡萄汁",
+            "芭樂汁",
+            "果昔"
+          ]
+        },
+        {
+          "canonicalForm": "養樂多",
+          "list": [
+            "比菲多",
+            "發酵乳"
+          ]
+        },
+        {
+          "canonicalForm": "優酪乳",
+          "list": [
+            "優酪"
+          ]
+        },
+        {
+          "canonicalForm": "飲料",
+          "list": []
+        }
+      ]
+    },
+    {
+      "name": "food",
+      "subLists": [
+        {
+          "canonicalForm": "蛋",
+          "list": [
+            "水煮蛋",
+            "茶葉蛋"
+          ]
+        },
+        {
+          "canonicalForm": "飯",
+          "list": [
+            "便當",
+            "丼",
+            "粥",
+            "咖哩"
+          ]
+        },
+        {
+          "canonicalForm": "麵",
+          "list": [
+            "義大利麵",
+            "筆尖麵",
+            "炒麵",
+            "牛肉麵"
+          ]
+        },
+        {
+          "canonicalForm": "三明治",
+          "list": [
+            "飯糰",
+            "肉包",
+            "漢堡",
+            "大麥克"
+          ]
+        },
+        {
+          "canonicalForm": "甜點",
+          "list": [
+            "提拉迷蘇",
+            "蛋糕",
+            "布丁",
+            "塔",
+            "凍",
+            "麻糬",
+            "甜甜圈"
+          ]
+        },
+        {
+          "canonicalForm": "零食",
+          "list": [
+            "餅乾",
+            "糖果",
+            "洋芋片",
+            "香瓜子",
+            "乖乖",
+            "夾心",
+            "花生"
+          ]
+        },
+        {
+          "canonicalForm": "麵包",
+          "list": [
+            "吐司",
+            "貝果",
+            "菠蘿"
+          ]
+        },
+        {
+          "canonicalForm": "口香糖",
+          "list": []
+        },
+        {
+          "canonicalForm": "地瓜",
+          "list": [
+            "蕃薯"
+          ]
+        },
+        {
+          "canonicalForm": "丸",
+          "list": []
+        },
+        {
+          "canonicalForm": "自助餐",
+          "list": []
+        },
+        {
+          "canonicalForm": "豆腐",
+          "list": []
+        },
+        {
+          "canonicalForm": "香菇",
+          "list": [
+            "金針菇"
+          ]
+        },
+        {
+          "canonicalForm": "沙拉",
+          "list": [
+            "生菜"
+          ]
+        },
+        {
+          "canonicalForm": "湯",
+          "list": []
+        }
+      ]
+    },
+    {
+      "name": "Ingredient",
+      "subLists": [
+        {
+          "canonicalForm": "蘿蔔",
+          "list": [
+            "白蘿蔔",
+            "紅蘿蔔"
+          ]
+        },
+        {
+          "canonicalForm": "玉米",
+          "list": [
+            "甜玉米",
+            "鹹玉米"
+          ]
+        },
+        {
+          "canonicalForm": "青菜",
+          "list": [
+            "白菜",
+            "高麗菜",
+            "萵苣",
+            "青江菜"
+          ]
+        },
+        {
+          "canonicalForm": "蔥",
+          "list": [
+            "青蔥",
+            "洋蔥"
+          ]
+        },
+        {
+          "canonicalForm": "水果",
+          "list": [
+            "番茄",
+            "蘋果",
+            "鳳梨",
+            "香蕉"
+          ]
+        },
+        {
+          "canonicalForm": "蛋",
+          "list": [
+            "雞蛋",
+            "鵝蛋",
+            "鴨蛋",
+            "洗選蛋"
+          ]
+        },
+        {
+          "canonicalForm": "肉",
+          "list": [
+            "原牛"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sauce",
+      "subLists": [
+        {
+          "canonicalForm": "美乃滋",
+          "list": []
+        },
+        {
+          "canonicalForm": "醬",
+          "list": []
+        },
+        {
+          "canonicalForm": "調味料",
+          "list": []
+        }
+      ]
+    }
+  ],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "立頓英式紅茶",
+      "intent": "商品",
+      "entities": []
+    },
+    {
+      "text": "潘朵拉冰釀梅酒",
+      "intent": "商品",
+      "entities": []
+    },
+    {
+      "text": "七星硬盒20支",
+      "intent": "商品",
+      "entities": []
+    },
+    {
+      "text": "黑松茶花麥茶",
+      "intent": "商品",
+      "entities": []
+    },
+    {
+      "text": "茶裏王英式紅茶",
+      "intent": "商品",
+      "entities": []
+    },
+    {
+      "text": "九五無鉛汽",
+      "intent": "商品",
+      "entities": []
+    },
+    {
+      "text": "義美豆乳",
+      "intent": "商品",
+      "entities": []
+    },
+    {
+      "text": "茶裏王白毫烏龍",
+      "intent": "商品",
+      "entities": []
+    }
+  ]
+}
