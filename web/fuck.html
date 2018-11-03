@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .small {
+                background-color: black;
+                /* width: 10px;
+                height: 10px; */
+                position: absolute;
+                /* border-radius: 50%; */
+            }
+    
+            .big {
+                background-color: black;
+                /* width: 40px;
+                height: 40px; */
+                position: absolute;
+                /* border-radius: 50%; */
+                display: none;
+            }
+    
+            .cool {
+                /* background-color: black; */
+                /* width: 300px;
+                height: 10px; */
+                position: absolute;
+            }
+        </style>
+    
+    </head>
+    
+    <body>
+        <script>
+            document.onmousemove = function (e) {
+                window.mx = e.pageX;
+                window.my = e.pageY;
+                if (!window.mx) window.mx = 0;
+                if (!window.my) window.my = 0;
+            }
+    
+            function Block(x, y, id, classes) {
+                this.x = x;
+                this.y = y;
+                this.v = 0.1;
+                this.vx = 0;
+                this.vy = 0;
+                if (id != undefined) {
+                    this.el = document.createElement('div');
+                    this.el.innerText = '幹';
+                    this.el.id = id;
+                    for (var cls of classes)
+                        this.el.classList.add(cls);
+                    document.getElementsByTagName('body')[0].appendChild(this.el);
+                }
+                this.update = function () {
+                    this.el.style.left = this.x;
+                    this.el.style.top = this.y;
+                }
+                this.step = function () {
+                    this.x += this.vx * this.v;
+                    this.y += this.vy * this.v;
+                    this.vx *= 0.97;
+                    this.vy *= 0.97;
+                }
+            }
+    
+            var children = [];
+            for (var i = 0; i < 30; i++) {
+                children.push(new Block(
+                    Math.random() * 888,
+                    Math.random() * 888,
+                    `c${i}`,
+                    ['cool']
+                ));
+            }
+    
+    
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var s = '';
+                for (var i = 0; i < 3; i++) {
+                    s += letters[Math.floor(Math.random() * 16)];
+                }
+                return `#4${s[0]}5${s[1]}A${s[2]}`;
+            }
+    
+            var b = new Block(40, 40, 'obj', ['big']);
+    
+            var int = setInterval(() => {
+                if (!window.mx || !window.my) {
+                    return;
+                }
+                b.vx += b.v * (window.mx - b.x);
+                b.vy += b.v * (window.my - b.y);
+                b.step();
+                b.update();
+                for (var c of children) {
+                    // c.el.style['background-color'] = getRandomColor();
+                    c.el.style['font-size'] = `${Math.floor(Math.random() * 100 + 20)}px`;
+                    // c.el.style.height = Math.random() * 2000;
+                    // c.el.style.width = Math.random() * 10;
+                    // c.el.style.height = c.el.style.width = Math.random() * 40;
+                    c.el.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    // if (Math.random() > 0.99) {
+                    //     c.el.innerText = 'FLAG{123iuybki2c7ty3ka24tvj23567ri4qc}';
+                    // } else {
+                    //     c.el.innerText = '幹';
+                    // }
+                    c.vx += c.v * Math.abs(b.x - c.x) * (b.x - c.x) / 10 + (Math.random() - 0.5) * 1000;
+                    c.vy += c.v * Math.abs(b.y - c.y) * (b.y - c.y) / 10 + (Math.random() - 0.5) * 1000;
+                    c.vx *= 0.9;
+                    c.vy *= 0.9;
+                    c.step();
+                    c.update();
+                }
+            }, 1000 / 60);
+        </script>
+    </body>
+</html>
