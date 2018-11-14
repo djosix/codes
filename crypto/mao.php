@@ -14,7 +14,6 @@ class Mao {
         $padding = 16 - (strlen($data) % 16);
         $data = str_repeat(chr($padding), $padding) . $data;
         $cipher = openssl_encrypt($data, $this->method, $this->key, OPENSSL_RAW_DATA, $iv);
-        var_dump('cipher = '. bin2hex($cipher) . "\n");
         return base64_encode($iv . $cipher);
     }
 
