@@ -16,14 +16,13 @@ count = 0
 
 while True:
     vector = np.random.uniform(size=[2, batch_size])
-    x, y = vector
-    radius2 = x * x + y * y
+    radius2 = np.sum(vector ** 2)
 
-    in_circle += (radius2 < 1).sum()
+    in_circle += np.sum(radius2 < 1)
     count += batch_size
 
     if show:
         plt.scatter(*vector[:, radius2 < 1], color='black', marker='.')
         plt.pause(1e-8)
  
-    print('esitmated pi =', 4 * in_circle / count)
+    print('estimated pi =', 4 * in_circle / count)
