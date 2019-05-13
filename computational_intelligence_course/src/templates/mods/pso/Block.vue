@@ -79,12 +79,12 @@
             .field
               .ui.button(
                 v-bind:class='{ disabled: !(pso && pso.iteration) }'
-                @click='$refs.saveModel.click()'
+                @click='$refs.saveModel.value = null; $refs.saveModel.click()'
               ) Save
             .field
               .ui.button(
                 v-bind:class='{ disabled: !pso }'
-                @click='$refs.loadModel.click()'
+                @click='$refs.loadModel.value = null; $refs.loadModel.click()'
               ) Load
             .field
               .ui.button(@click='reset()') Reset
@@ -161,8 +161,10 @@ export default {
     },
 
     saveModel(path) {
-      writeTextFile(path, mod.exportModel());
-      context.emit('logInfo', 'PSO model saved to ' + path);
+      if (path) {
+        writeTextFile(path, mod.exportModel());
+        context.emit('logInfo', 'PSO model saved to ' + path);
+      }
     },
 
     reset() {
