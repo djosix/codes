@@ -11,7 +11,7 @@
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.6.0",
     "chart.js": "^2.8.0",
-    "jquery": "^3.3.1",
+    "jquery": ">=3.4.0",
     "less": "^3.9.0",
     "mathjs": "^5.8.0",
     "parcel-bundler": "^1.12.3",
