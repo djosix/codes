@@ -1,4 +1,5 @@
 import pygame
+# pylint: disable=no-member
 
 class App:
     def __init__(self,
@@ -13,7 +14,7 @@ class App:
         self.done = False
         self.screen = None
         self.clock = None
-        pygame.init() # pylint: disable=E1101
+        pygame.init()
     
 
     def start(self):
@@ -25,7 +26,7 @@ class App:
         
         while not self.done:
             for event in pygame.event.get():
-                if event.type == pygame.QUIT: # pylint: disable=E1101
+                if event.type == pygame.QUIT:
                     self.done = True
         
             self.run('before_logic')
