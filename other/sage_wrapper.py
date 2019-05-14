@@ -2,17 +2,17 @@ import subprocess as sp
 import os, sys
 import tempfile
 import socket
-import pickle
+import pickle, dill
 import base64
 
+dill._dill._reverse_typemap['ObjectType'] = object
 
 def deindent(code):
     import re
     try:
-        return code.replace(re.search(r'\n +', code).group(), '\n')
+        return code.replace(re.search(r'\n *', code).group(), '\n')
     except:
         return code
-
 
 class Sage:
     def __init__(self, stderr=True):
@@ -56,7 +56,7 @@ class Sage:
     def run(self, code, indent=True):
         if indent:
             code = deindent(code)
-        code = ('\n' + code).replace('\nreturn', '__return_value=')
+        code = ('\n' + code).replace('\nreturn', '\n__return_value=')
         code_bytes = (repr(code) + '\n').encode()
 
         self.client_file.write(code_bytes)
